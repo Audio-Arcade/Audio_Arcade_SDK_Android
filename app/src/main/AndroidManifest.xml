@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Connexion WebSocket au serveur -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Empêche le CPU de dormir pendant le stream audio -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Pas d'Activity dans le SDK — bibliothèque uniquement -->
+
+</manifest>
