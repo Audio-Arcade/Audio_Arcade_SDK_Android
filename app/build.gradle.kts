@@ -26,6 +26,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
+    publishing {
+        singleVariant("release") { withSourcesJar() }
+    }
 }
 
 dependencies {
@@ -39,4 +43,17 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.Audio-Arcade"
+                artifactId = "arcadeshare"
+                version = "2.0.1"
+            }
+        }
+    }
 }
